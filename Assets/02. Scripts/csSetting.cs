@@ -10,14 +10,21 @@ public class csSetting : MonoBehaviour
     public Button[] btnSetting;
     public Canvas cvSetting;
 
-    public bool settingOpen;
+    public bool isSetting;
 
     private int slotNum;
 
     private void Awake()
     {
-        instance = this;
-        cvSetting.enabled = settingOpen;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance.gameObject);
+        }
+        cvSetting.enabled = false;
     }
 
     void Start()
@@ -28,18 +35,20 @@ public class csSetting : MonoBehaviour
     
     void Update()
     {
-        if(settingOpen)
+        if (isSetting)
         {
-            cvSetting.enabled = settingOpen;
+            cvSetting.enabled = true;
             SeletSlotNum();
+            Debug.Log("세팅 열림");
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Debug.Log("세팅 " + slotNum +"슬롯 선택");
+                ActionSlot(slotNum);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && settingOpen)
-        {
-            SelectSlot(slotNum);
-        }
     }
-    private void SelectSlot(int numSlot)
+    private void ActionSlot(int numSlot)
     {
         btnSetting[numSlot].onClick.Invoke();
     }
@@ -82,6 +91,11 @@ public class csSetting : MonoBehaviour
 
     public void OnClickBack()
     {
-        settingOpen = false;
+        btnSetting[slotNum].image.color = Color.black;
+        isSetting = false;
+        slotNum = 0;
+        cvSetting.enabled = false;
+
+        Debug.Log("세팅 닫음");
     }
 }

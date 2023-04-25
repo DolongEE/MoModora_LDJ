@@ -6,16 +6,17 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class csSoundManager : MonoBehaviour
 {
+    public float soundVolume = 1f;
+    public bool isSoundMute = false;
+    [Space(10)]
     public AudioClip[] bgmClip;
     [Space(10)]
     public AudioClip[] kahoClip;
     [Space(10)]
     public AudioClip[] effectClip;
 
-    public float soundVolume = 1f;
-    public bool isSoundMute = false;
-
     private AudioSource audioSource;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);

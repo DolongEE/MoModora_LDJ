@@ -8,6 +8,9 @@ TagManager:
   - NPC
   - Door
   - pnlSetting
+  - Slot
+  - SavePoint
+  - StageManager
   layers:
   - Default
   - TransparentFX

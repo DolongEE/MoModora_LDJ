@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class csKahoCtrl : MonoBehaviour
 {
+    public PlayerData p_Data;
+
     public float m_maxSpeed;
     public float m_jumpPower;
     public csChatUI script_CahtUI;
@@ -23,9 +25,12 @@ public class csKahoCtrl : MonoBehaviour
     private int attackCount;
     private int keyCount;
 
+    public int starDust;
 
     public float horizon;
     public float vertic;
+
+
     private void Awake()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
