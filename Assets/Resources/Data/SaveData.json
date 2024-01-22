@@ -1,0 +1,39 @@
+{
+  "saveDatas": [
+    {
+      "isCheck": "true",
+      "slotNumber": "1",
+      "playTime": "0",
+      "posX": "0",
+      "posY": "0"
+    },
+    {
+      "isCheck": "false",
+      "slotNumber": "2",
+      "playTime": "0",
+      "posX": "0",
+      "posY": "0"
+    },
+    {
+      "isCheck": "false",
+      "slotNumber": "3",
+      "playTime": "0",
+      "posX": "0",
+      "posY": "0"
+    },
+    {
+      "isCheck": "false",
+      "slotNumber": "4",
+      "playTime": "0",
+      "posX": "0",
+      "posY": "0"
+    },
+    {
+      "isCheck": "false",
+      "slotNumber": "5",
+      "playTime": "0",
+      "posX": "0",
+      "posY": "0"
+    }
+  ]
+}
